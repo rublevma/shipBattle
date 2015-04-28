@@ -1,8 +1,6 @@
 package ru.ship.model;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.text.MessageFormat;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author a.zhizhelev on 21.04.2015.
@@ -12,6 +10,7 @@ public class Model {
     public static class GameBoard{}
     /** Сделанные ходы и ответы на них.*/
     public static class GameBoardState{
+        @NotNull
         GameBoard gameBoard;
 //        List<Ship> hurtShips;
 //        HitStatus getStatus(Point point);
@@ -37,7 +36,8 @@ public class Model {
     }
     class ShipPosition {}
 
-    HitStatus shoot(GameBoard gameBoard, GameBoardState state, Point point){
-        throw new NotImplementedException();
+    @NotNull
+    HitStatus shoot(@NotNull GameBoard gameBoard, @NotNull GameBoardState state, @NotNull Point point){
+        throw new IllegalStateException();
     }
 }
